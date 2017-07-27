@@ -5,7 +5,6 @@ import requests
 import sys
 import os
 
-resulut=sys.argv[1];
 
 #删除过程文件函数
 def removefile(filename):
@@ -140,10 +139,14 @@ def writehtml(filecontrol,list):
 		filecontrol.write(temp)			
 	
 if __name__ == '__main__':
-	removefile("result/subdomain.log")
-	removefile("result/final_ip.log")
-	removefile("result/subdomain.html")
-	removefile("result/c_ip.log")
-	cut()
-	ip()
-	url()
+	try:
+		resulut=sys.argv[1];
+		removefile("result/subdomain.log")
+		removefile("result/final_ip.log")
+		removefile("result/subdomain.html")
+		removefile("result/c_ip.log")
+		cut()
+		ip()
+		url()
+	except:
+		print "useage:python subname.py (filename)"
